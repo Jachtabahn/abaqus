@@ -1,6 +1,15 @@
+# What is Abaqus?
 
+[Wikipedia](https://en.wikipedia.org/wiki/Abaqus)
 
+The Abaqus products use the open-source scripting language Python for scripting and customization.
 
+Abaqus/CAE is the Complete Abaqus Environment.
+
+* modeling of mechanical components
+* analysis of mechanical components
+* assemblies (pre-processing)
+* visualizing the finite element analysis result
 
 
 # Gegeben: ODB Datei
