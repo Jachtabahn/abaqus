@@ -6,9 +6,9 @@ import io
 import odbAccess
 
 ODB_PATH = "Z:\\database.odb"
-ODB_STEP = "Example-Step"
+ODB_STEP = "Step-1"
 ODB_FRAME = -1
-ODB_INSTANCE = "EXAMPLE-INSTANCE"
+ODB_INSTANCE = "CONCRETE-1"
 CSV_PATH = "Z:\\enriched.csv"
 
 odb = odbAccess.openOdb(ODB_PATH)
@@ -33,7 +33,9 @@ for i, name in enumerate(names):
   if i == 0: continue
   if name in frame.fieldOutputs.keys(): continue
 
-  new_field_output = frame.FieldOutput(name=name, description=name, type=odbAccess.SCALAR)
+  new_field_output = frame.FieldOutput(name=name,
+                          description=name,
+                          type=odbAccess.SCALAR)
   new_field_output.addData(
     position = odbAccess.NODAL,
     instance = instance,
