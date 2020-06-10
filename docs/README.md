@@ -9,7 +9,7 @@ Abaqus uses the open-source scripting language Python for scripting and customiz
 
 # Quick Start
 
-To use the scripts, do the following.
+We will run the scripts directly from the Abaqus window. To use the scripts, do the following:
 
 1. Open Abaqus/CAE or Abaqus/Viewer.
 1. Click File / Run Script... and navigate to `extract.py`.
@@ -39,13 +39,14 @@ In this article, we deal with field outputs. If you want to learn more about his
 
 # Field outputs
 
-We will proceed in three steps. First, we will read out all field outputs, that we can find, and write them into a CSV file. CSV means comma-separated values. So we will just write all the numbers from the field output as a comma-separated list of values into a file. We also put the name of the field output into this file. That's it.
+We will proceed in three steps.
 
-Second, we will *enrich* this CSV file with additional lists of numbers. We will compute these new lists from the numbers, that are already there. This computation can be very complex and can involve differentiating or integrating some complex function with the numbers, that are already there, as its parameters. Then, a new **enriched** CSV file is created, containing the old number lists **plus** the new number lists.
+1. First, in [extract.py](https://github.com/Jachtabahn/abaqus/blob/master/extract.py). we will read out all field outputs, that we can find, and write them into a CSV file. CSV means comma-separated values. So we will just write all the numbers from the field output as a comma-separated list of values into a file. We also put the name of the field output into this file. That's it.
 
-Third, we will read this **enriched** CSV file once again to add the new number lists as new field outputs to our output database.
+1. Second, in [fill.py](https://github.com/Jachtabahn/abaqus/blob/master/fill.py), we will *enrich* this CSV file with additional lists of numbers. We will compute these new lists from the numbers, that are already there. This computation can be very complex and can involve differentiating or integrating some complex function with the numbers, that are already there, as its parameters. Then, a new **enriched** CSV file is created, containing the old number lists **plus** the new number lists.
 
-These three steps are performed in the Python scripts
-* [extract.py](https://github.com/Jachtabahn/abaqus/blob/master/extract.py)
-* [fill.py](https://github.com/Jachtabahn/abaqus/blob/master/fill.py)
-* [field_outputs.py](https://github.com/Jachtabahn/abaqus/blob/master/field_outputs.py)
+1. Third, in [field_outputs.py](https://github.com/Jachtabahn/abaqus/blob/master/field_outputs.py), we will read this **enriched** CSV file to add the new number lists as new field outputs to our output database.
+
+The main resource for writing these scripts was `wufengyun.com`. On this website, it is possible to
+* [search for Python API endpoints](http://wufengyun.com:888/texis/search/?query=OdbStep&submit.x=0&submit.y=0&group=bk&CDB=v6.14),
+* [read the documentation of those Python API endpoints](http://wufengyun.com:888/v6.14/books/ker/default.htm?startat=pt01ch34pyo01.html).
